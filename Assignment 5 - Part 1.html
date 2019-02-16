@@ -1,0 +1,92 @@
+
+<!doctype html>
+
+<html name="html">
+
+<head name="head">
+  <title> Assignment 5 - Part 1 </title>
+
+  <style>
+
+html
+{
+    background-color: white;
+}
+
+img {
+  width: 300px;
+  height: 300px;
+}
+
+body
+{
+    background-color:                   white;
+    font-family:                   sans-serif;
+    font-size:                           15px;
+    position:                        absolute;
+    height:                             768px;
+    width:                             1024px;
+}
+</style>
+</head>
+<body name="body">
+  <h1 name="h1"></h1>
+    <h2 name="h2"></h2>
+      <div id="divtag" name="div">
+        <p id="field"></p>
+      </div>
+      <div id="divtag2">
+        <p id="field2">
+        <b>Title:</b> <p id="div11"></p>
+        <b>Artist:</b> <p id="div12"></p>
+        <b>Album:</b> <p id="div13"></p>
+        <b>Year:</b> <p id="div14"></p>
+        </p>
+      </div>
+
+<script language="javascript">
+
+let songs = [
+  {
+    title: "Getting Away with It (All Messed Up)",
+    artist: "James",
+    album: "Pleased to Meet You",
+    year: 2001,
+    art: "https://upload.wikimedia.org/wikipedia/en/2/2a/JamesPleasedToMeetYou.jpg"
+  },
+  {
+    title: "Renaissance Affair",
+    artist: "Hooverphonic",
+    album: "Blue Wonder Power Milk",
+    year: 1998,
+    art: "https://upload.wikimedia.org/wikipedia/en/1/17/Hooverphonic-Blue_Wonder_Power_Milk.jpg"
+  },
+  {
+    title: "White Nights",
+    artist: "Oh Land",
+    album: "Oh Land",
+    year: 2011,
+    art: "https://upload.wikimedia.org/wikipedia/en/6/68/Oh_Land_%28album%29.png"
+  }
+]
+
+songs.forEach(function(song){
+let art_cover = document.createElement("img");
+art_cover.src = song.art
+art_cover.id = "song_" + songs.indexOf(song);
+art_cover.addEventListener("click", function(){display(song)} );
+myNewPage = document.getElementById("field");
+myNewPage.appendChild(art_cover);
+})
+
+function display(song){
+document.getElementById("div11").innerText = song.title;
+document.getElementById("div12").innerText = song.artist;
+document.getElementById("div13").innerText = song.album;
+document.getElementById("div14").innerText = song.year;
+}
+
+</script>
+
+</body>
+</html>
